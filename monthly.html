@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"$schema": "https://vega.github.io/schema/vega/v5.json", "data": [{"name": "source_0", "values": [{"Count": 7658, "Count_end": 7658.0, "Count_start": 0.0, "MONTH": 1}, {"Count": 6823, "Count_end": 6823.0, "Count_start": 0.0, "MONTH": 2}, {"Count": 7129, "Count_end": 7129.0, "Count_start": 0.0, "MONTH": 3}, {"Count": 7551, "Count_end": 7551.0, "Count_start": 0.0, "MONTH": 4}, {"Count": 8808, "Count_end": 8808.0, "Count_start": 0.0, "MONTH": 5}, {"Count": 8623, "Count_end": 8623.0, "Count_start": 0.0, "MONTH": 6}, {"Count": 9058, "Count_end": 9058.0, "Count_start": 0.0, "MONTH": 7}, {"Count": 9529, "Count_end": 9529.0, "Count_start": 0.0, "MONTH": 8}, {"Count": 9183, "Count_end": 9183.0, "Count_start": 0.0, "MONTH": 9}, {"Count": 8779, "Count_end": 8779.0, "Count_start": 0.0, "MONTH": 10}, {"Count": 7140, "Count_end": 7140.0, "Count_start": 0.0, "MONTH": 11}, {"Count": 4235, "Count_end": 4235.0, "Count_start": 0.0, "MONTH": 12}]}, {"name": "source_0_x_domain_MONTH", "values": [{"MONTH": 1}, {"MONTH": 2}, {"MONTH": 3}, {"MONTH": 4}, {"MONTH": 5}, {"MONTH": 6}, {"MONTH": 7}, {"MONTH": 8}, {"MONTH": 9}, {"MONTH": 10}, {"MONTH": 11}, {"MONTH": 12}]}], "marks": [{"type": "rect", "name": "marks", "from": {"data": "source_0"}, "encode": {"update": {"x": {"field": "MONTH", "scale": "x"}, "y2": {"field": "Count_start", "scale": "y"}, "y": {"field": "Count_end", "scale": "y"}, "fill": {"value": "#4c78a8"}, "tooltip": {"signal": "{\"MONTH\": format(datum[\"MONTH\"], \"\"), \"Count\": format(datum[\"Count\"], \"\")}"}, "width": {"signal": "max(0.25, bandwidth('x'))"}}}, "style": ["bar"]}], "scales": [{"name": "x", "type": "band", "domain": {"data": "source_0_x_domain_MONTH", "field": "MONTH", "sort": true}, "range": [0, {"signal": "width"}], "paddingInner": 0.1, "paddingOuter": 0.05}, {"name": "y", "type": "linear", "domain": {"data": "source_0", "fields": ["Count_start", "Count_end"]}, "range": [{"signal": "height"}, 0], "nice": true, "zero": true}], "axes": [{"scale": "y", "orient": "left", "domain": false, "minExtent": 0, "ticks": false, "grid": true, "maxExtent": 0, "labels": false, "tickCount": {"signal": "ceil(height/40)"}, "zindex": 0, "aria": false, "gridScale": "x"}, {"scale": "x", "grid": false, "labelAngle": 270, "zindex": 0, "orient": "bottom", "title": "Month", "labelAlign": "right", "labelBaseline": "middle"}, {"scale": "y", "title": "Number of Incidents", "zindex": 0, "labelOverlap": true, "tickCount": {"signal": "ceil(height/40)"}, "orient": "left", "grid": false}], "title": {"text": "Total Monthly Amounts of Violent Crimes, Car Incidents, and Thefts ", "frame": "group"}, "width": 600, "padding": 5, "height": 400, "background": "white", "style": "cell"};
+      var embedOpt = {"mode": "vega"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
