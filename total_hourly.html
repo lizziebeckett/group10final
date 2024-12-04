@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"$schema": "https://vega.github.io/schema/vega/v5.json", "data": [{"name": "source_0", "values": [{"Count": 6889, "HOUR": 0}, {"Count": 2186, "HOUR": 1}, {"Count": 1959, "HOUR": 2}, {"Count": 1220, "HOUR": 3}, {"Count": 907, "HOUR": 4}, {"Count": 1108, "HOUR": 5}, {"Count": 1411, "HOUR": 6}, {"Count": 2825, "HOUR": 7}, {"Count": 4698, "HOUR": 8}, {"Count": 4762, "HOUR": 9}, {"Count": 5100, "HOUR": 10}, {"Count": 5217, "HOUR": 11}, {"Count": 5569, "HOUR": 12}, {"Count": 4873, "HOUR": 13}, {"Count": 5155, "HOUR": 14}, {"Count": 5033, "HOUR": 15}, {"Count": 5818, "HOUR": 16}, {"Count": 6076, "HOUR": 17}, {"Count": 5514, "HOUR": 18}, {"Count": 4649, "HOUR": 19}, {"Count": 4271, "HOUR": 20}, {"Count": 3664, "HOUR": 21}, {"Count": 3128, "HOUR": 22}, {"Count": 2484, "HOUR": 23}]}, {"name": "data_0", "values": [{"Count": 6889, "HOUR": 0}, {"Count": 2186, "HOUR": 1}, {"Count": 1959, "HOUR": 2}, {"Count": 1220, "HOUR": 3}, {"Count": 907, "HOUR": 4}, {"Count": 1108, "HOUR": 5}, {"Count": 1411, "HOUR": 6}, {"Count": 2825, "HOUR": 7}, {"Count": 4698, "HOUR": 8}, {"Count": 4762, "HOUR": 9}, {"Count": 5100, "HOUR": 10}, {"Count": 5217, "HOUR": 11}, {"Count": 5569, "HOUR": 12}, {"Count": 4873, "HOUR": 13}, {"Count": 5155, "HOUR": 14}, {"Count": 5033, "HOUR": 15}, {"Count": 5818, "HOUR": 16}, {"Count": 6076, "HOUR": 17}, {"Count": 5514, "HOUR": 18}, {"Count": 4649, "HOUR": 19}, {"Count": 4271, "HOUR": 20}, {"Count": 3664, "HOUR": 21}, {"Count": 3128, "HOUR": 22}, {"Count": 2484, "HOUR": 23}]}], "marks": [{"type": "line", "name": "layer_0_marks", "from": {"data": "source_0"}, "sort": {"field": "x"}, "encode": {"update": {"y": {"field": "Count", "scale": "y"}, "tooltip": {"signal": "{\"HOUR\": format(datum[\"HOUR\"], \"\"), \"Count\": format(datum[\"Count\"], \"\")}"}, "defined": {"signal": "isValid(datum[\"HOUR\"]) && isFinite(+datum[\"HOUR\"]) && isValid(datum[\"Count\"]) && isFinite(+datum[\"Count\"])"}, "x": {"field": "HOUR", "scale": "x"}, "stroke": {"value": "coral"}}}, "style": ["line"]}, {"type": "symbol", "name": "layer_1_marks", "from": {"data": "data_0"}, "encode": {"update": {"y": {"field": "Count", "scale": "y"}, "x": {"field": "HOUR", "scale": "x"}, "opacity": {"value": 1}, "fill": {"value": "#4c78a8"}, "tooltip": {"signal": "{\"HOUR\": format(datum[\"HOUR\"], \"\"), \"Count\": format(datum[\"Count\"], \"\")}"}}}, "style": ["point"]}], "scales": [{"name": "x", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "HOUR"}, {"data": "data_0", "field": "HOUR"}]}, "range": [0, {"signal": "width"}], "nice": true, "zero": false}, {"name": "y", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "Count"}, {"data": "data_0", "field": "Count"}]}, "range": [{"signal": "height"}, 0], "nice": true, "zero": true}], "axes": [{"scale": "x", "labels": false, "zindex": 0, "aria": false, "maxExtent": 0, "ticks": false, "orient": "bottom", "gridScale": "y", "tickCount": {"signal": "ceil(width/40)"}, "domain": false, "minExtent": 0, "grid": true}, {"scale": "y", "labels": false, "orient": "left", "maxExtent": 0, "aria": false, "ticks": false, "tickCount": {"signal": "ceil(height/40)"}, "grid": true, "domain": false, "gridScale": "x", "minExtent": 0, "zindex": 0}, {"scale": "x", "zindex": 0, "orient": "bottom", "tickCount": {"signal": "ceil(width/40)"}, "labelOverlap": true, "grid": false, "title": "Hour (24-hour clock)", "labelFlush": true}, {"scale": "y", "grid": false, "title": "Number of Incidents", "labelOverlap": true, "orient": "left", "zindex": 0, "tickCount": {"signal": "ceil(height/40)"}}], "title": {"text": "Selected Crimes by Hour of Day", "frame": "group"}, "height": 400, "background": "white", "style": "cell", "padding": 5, "width": 600};
+      var embedOpt = {"mode": "vega"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
