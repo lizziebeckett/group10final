@@ -78,3 +78,8 @@ p {
     gap:20px;
     align-items:baseline;
 }
+
+.APA {
+    text-indent: 40px hanging;
+    text-align: left
+}
