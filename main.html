@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3> Liam M, Mika M, Elizabeth B, Srijith G <br> Group 10</h3>
+    <h5> Liam M, Mika M, Elizabeth B, Srijith G <br> Group 10</h5>
     <h1>Crime in Boston: What Students Need to Know</h1>
     <br></br>
     <img class="demure" src="https://www.bostonteapartyship.com/wp-content/uploads/2023/03/boston-fall.jpg">
     <a class="centersmall" href="https://www.bostonteapartyship.com/things-to-do-in-boston-in-the-fall"> Image source </a>
-    <p>	In this project, we will be analyzing various crime reports around the Boston area and more specifically, in which neighborhoods they occur, to provide additional insight to students who are looking for off-campus housing. With over 30 colleges and universities and 150,000 students, Boston is one of the largest college cities in the country, and with that comes thousands of students looking for housing each year. Although Boston is generally considered a safe city, it is still an urban area where crime does occur, and it is important to consider this when selecting a new place to live. Our project aims to help students who are not used to living in a city be aware of certain areas that may have higher rates of crime than others, and educate them in choosing housing in areas with lower crime rates. 
-    </p>
-    <iframe src="crime_map.html" width="600" height="400"></iframe>
-
+    <p>	In this project, we will be analyzing various crime reports around the Boston area and more specifically, in which neighborhoods they occur, to provide additional insight to students who are looking for off-campus housing. With over 30 colleges and universities and 150,000 students, Boston is one of the largest college cities in the country, and with that comes thousands of students looking for housing each year. Although Boston is generally considered a safe city, it is still an urban area where crime does occur, and it is important to consider this when selecting a new place to live. Our project aims to help students who are not used to living in a city be aware of certain areas that may have higher rates of crime than others, and educate them in choosing housing in areas with lower crime rates. </p>
+    <h4> Methodology </h4>
+    <p>For our project, we’re using the 2024 Boston Crime Incident Reports dataset from the Boston open data portal. This dataset includes crime incidents reported from August 2015 to the present, sourced from the city’s new reporting system. The data contains details such as crime types, dates, locations, and other related attributes. It has 18 columns and over 100,000 entries, which will be filtered to 2024 only and sorted by coordinates closest to the Northeastern Boston Campus. The dataset is available online at Boston’s Open Data Portal, and it is able to be loaded into an analysis environment for further exploration and visualization.</p>
+    <a class="centersmall" href="https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-source-new-system">Find the dataset here.</a>
+    <p>We filtered the dataset to focus specifically on crime incidents that occurred in 2024 and further narrowed the data to crimes reported near Northeastern University’s Boston campus using geographic coordinates.</p>
+    <h4>Findings</h4>
+    <h3>Gun violence in Boston has generally decreased over time, and is less prevalent in colder months</h3>
+    <div class="solo">
+        <iframe src="gun_metrics_over_time.html" height=600 width = 800></iframe>
+    </div>
+    <p>This is a line plot that tracks weekly gun-related incidents over time, providing a visual representation of trends and fluctuations. The red line connects weekly data points, showing how the number of incidents changes from week to week. Comparing the years 2023 and 2024, the plot reveals that the average number of gun-related incidents in 2024 is lower than in 2023, as seen in the reduced frequency and intensity of peaks in 2024. From January to May 2024, there is a noticeable dip in incidents, and a recurring pattern emerges where the end of each month tends to have fewer incidents compared to the middle. For students, this trend suggests a potentially safer environment in 2024 and highlights the importance of understanding these patterns to guide future safety measures and awareness campaigns.</p>
+    <h3>Most gun-related crime in Boston this year happened in residential areas, and was not very common near campus.</h3>
+    <div class="solo">
+        <iframe src="shooting_map.html" height = 600 width = 800></iframe>
+    </div>
+    <p>This Folium map provides a focused visualization of shooting incidents, offering an in-depth look at where these violent events are occurring within Boston. The map makes it easier for users to find places with higher risks of firearm violence by highlighting the exact locations of gun-related crimes by filtering only for shootings. Through the interactive capabilities, viewers may zoom out to see more general trends throughout the city or zoom in for a close-up look at certain areas. Law enforcement, legislators, and community organizations may better allocate resources, create focused safety efforts, and address the underlying causes of gun violence in high-impact regions with the help of this map. By offering easily comprehensible data on the frequency and distribution of shootings, it also increases public awareness.</p>
 </body>

@@ -8,14 +8,38 @@ h1 {
     text-align: center;
 }
 
-h3 {
+h5 {
     color:gray;
     font-size: 25px;
     text-align: left;
 }
 
+h4 {
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    background-color: gray;
+    text-align:center;
+    position:sticky;
+    top:0;
+    font-size:30px;
+}
+
+h3 {
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(114, 160, 108);
+    text-align:center;
+    position:sticky;
+    top:0;
+    font-size:25px;
+    font-weight:lighter;
+    font-style: italic;
+}
+
 p {
-    margin: 30px;
+    margin: 50px;
     font-size: 20px;
     text-indent: 40px;
 }
@@ -35,4 +59,22 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.solo {
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.double {
+    margin-left:auto;
+    margin-right:auto; 
+    justify-content:center;
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    align-items:baseline;
 }
